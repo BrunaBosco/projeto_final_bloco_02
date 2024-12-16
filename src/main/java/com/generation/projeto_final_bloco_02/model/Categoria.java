@@ -25,6 +25,7 @@ public class Categoria {
 	@NotNull(message = "O atributo noome da categoria é obrigatorio")
 	private String categoria;
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 
@@ -51,6 +52,5 @@ public class Categoria {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-	
 	
 }

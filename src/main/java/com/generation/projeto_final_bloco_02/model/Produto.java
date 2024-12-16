@@ -36,6 +36,7 @@ public class Produto {
 	@NotNull(message = "O atributo quantidade é obrigatório!")
 	private Integer quantidade;
 	
+	@ManyToOne
 	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 
@@ -87,4 +88,5 @@ public class Produto {
 		this.categoria = categoria;
 	}
 	
+
 }
